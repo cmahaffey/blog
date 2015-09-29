@@ -1,5 +1,5 @@
 <header>
-  <img class="responsive-img" src="img/3/day3_1.jpg" />
+  <img class="responsive-img" src="http://i650.photobucket.com/albums/uu224/tjmahaffey/day3_1_zps8vjsqf3v.jpg" />
 </header>
 <div class="container">
   <table class="calendar">
@@ -18,74 +18,36 @@
     <tr>
     <td ></td>
     <td ></td>
-    <%@date=1%>
-    <%while @date<=5%>
-      <%if @days.length>=@date%>
+      <%while @date<=@days.length%>
         <%@days.each do |day|%>
-          <td class="day day1"><a href="/<%=day.day_number%>"><%=day.date%></a></td>
-          <%@date+=1%>
-        <%end%>
-      <%else%>
-        <td class="day"><%=@date%></td>
-        <%@date+=1%>
-      <%end%>
-    <%end%>
-    </tr>
-    <tr>
-      <%while @date<=12%>
-        <%if @days.length>=@date%>
-          <%@days.each do |day|%>
-            <td class="day day1"><a href="/<%=day.day_number%>"><%=day.date%></a></td>
-            <%@date+=1%>
+          <%if @date%7==6%>
+            </tr>
+            <tr>
+              <td class="day"><a href="/<%=day.day_number%>"><%=day.day_number%></a></td>
+
+          <%else%>
+              <td class="day"><a href="/<%=day.day_number%>"><%=day.day_number%></a></td>
           <%end%>
-        <%else%>
-          <td class="day"><%=@date%></td>
           <%@date+=1%>
         <%end%>
       <%end%>
-    </tr>
-    <tr>
-      <%while @date<=19%>
-        <%if @days.length>=@date%>
-          <%@days.each do |day|%>
-            <td class="day day1"><a href="/<%=day.day_number%>"><%=day.date%></a></td>
+      <%while @date<31%>
+        <%if @date%7==6%>
+          </tr>
+          <tr>
+            <td class="day"><%=@date%></td>
             <%@date+=1%>
-          <%end%>
         <%else%>
-          <td class="day"><%=@date%></td>
-          <%@date+=1%>
-        <%end%>
-      <%end%>
-    </tr>
-    <tr>
-      <%while @date<=26%>
-        <%if @days.length>=@date%>
-          <%@days.each do |day|%>
-            <td class="day day1"><a href="/<%=day.day_number%>"><%=day.day%></a></td>
+            <td class="day"><%=@date%></td>
             <%@date+=1%>
-          <%end%>
-        <%else%>
-          <td class="day"><%=@date%></td>
-          <%@date+=1%>
         <%end%>
       <%end%>
+      <td/>
+      <td/>
+      <td/>
     </tr>
-    <tr>
-      <%while @date<=30%>
-        <%if @days.length>=@date%>
-          <%@days.each do |day|%>
-            <td class="day day1"><a href="/<%=day.day_number%>"><%=day.day%></a></td>
-            <%@date+=1%>
-          <%end%>
-        <%else%>
-          <td class="day"><%=@date%></td>
-          <%@date+=1%>
-        <%end%>
-      <%end%>
-    <td ></td>
-    <td ></td>
-    <td ></td>
-    </tr>
+
+
 
     </table>
 </div>

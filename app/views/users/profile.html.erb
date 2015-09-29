@@ -1,7 +1,9 @@
 <script type="text/template" id="img-url-list">
+  <p>
+    <%%=img_url%>
+  </p>
 
-    <img src="<%%=img_url%>" alt="" />
-
+    <button class='remove'type="button" name="button">Delete picture</button>
 </script>
 
 <input type="hidden" id="api-token" value='<%=@user.token%>'>

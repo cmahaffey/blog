@@ -1,9 +1,8 @@
-Day <%=@day.day_number%>
-<%@day.pictures.each do |photo|%>
-<img src="<%=photo.img_url%>" alt="" />
-<%end%>
-
-
-<div class="images">
-
+<h2>Day <%=@day.day_number%></h2>
+<div class="row">
+  <%@day.pictures.each do |photo|%>
+    <div class="col s6 image">
+      <center><img src="<%=photo.img_url%>" alt="" /></center>
+    </div>
+  <%end%>
 </div>

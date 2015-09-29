@@ -1,7 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 $(function(){
-  console.log($('#day-id').val());
+  console.log('here');
 $.ajaxSetup({
      headers:{
       "accept": "application/json"
@@ -25,6 +25,13 @@ $.ajaxSetup({
     var  html = this.template(this.model.toJSON());
     var $html = $(html);
     this.$el.append($html);
+  },
+  events: {
+  'click button.remove': 'removePerson'
+  },
+  removePerson: function (){
+    this.model.destroy();
+    this.$el.remove();
   }
 });
 
