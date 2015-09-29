@@ -1,0 +1,41 @@
+<script type="text/template" id="img-url-list">
+
+    <img src="<%%=img_url%>" alt="" />
+
+</script>
+
+<input type="hidden" id="api-token" value='<%=@user.token%>'>
+Welcome, <%=@user.username%>  <%= link_to 'Log Out',  log_out_path, method: :delete %>
+<input type="hidden" id="token"  value="<%= @user.token %>">
+
+<h2>Days</h2>
+<div class="row">
+  <%@days.each do |day|%>
+    <div class="col s6">
+      Day <%=day.day_number%>
+      <ul class='photos' data-id='<%=day.id%>'>
+
+      </ul>
+      <form class="add-picture" action="/api/pictures" method="post">
+        <input type="hidden" name="picture[day_id]" value="<%=day.id%>">
+        <input type="text" name="picture[img_url]"placeholder="img_url">
+        <input type="submit" value="add image">
+      </form>
+      <button type="button" name="button">edit</button>
+      <form class="" action="/api/days/<%=day.id%>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit">delete</button>
+      </form>
+    </div>
+  <%end%>
+</div>
+
+
+
+<h4>Add a new day</h4>
+
+<form class="" action="/users/profile" method="post">
+  <label for=""> Day Number</label>
+  <input type="number" name="day[day_number]" value="">
+  <input type="submit">
+</form>
