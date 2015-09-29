@@ -22,7 +22,6 @@ $.ajaxSetup({
   template: _.template( $('#img-url-list').html() ),
   render: function(){
     this.$el.empty();
-    //if this.model.attribute= the ul's datatype
     var  html = this.template(this.model.toJSON());
     var $html = $(html);
     this.$el.append($html);
@@ -39,10 +38,14 @@ var PhotoListView=Backbone.View.extend({
     var photoList = this.collection.models;
     var $view;
     for (var i=0; i<photoList.length; i++){
-      debugger;
-       $view = new PhotoView({model:photoList[i]});
-       $view.render();
-       this.$el.append($view.$el)
+      for (var j = 0; j < this.$el.length; j++) {
+        //prevents images coming up in the wrong day
+        if ($(this.$el[j]).data('id')===photoList[i].get('day_id')){
+          $view = new PhotoView({model:photoList[i]});
+          $view.render();
+          $(this.$el[j]).append($view.$el)
+        }
+      }
     }
   }
 });
