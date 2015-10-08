@@ -8,58 +8,9 @@
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
  *
+ * file per style scope.
+ *= require materialize
  *= require_tree .
  *= require_self
  */
- body {
-   background-color: lightyellow;
-   color: #222;
- }
-
- .month{
-   text-align: center;
- }
-
- td,tr{
-   text-align: right;
-   padding: 0;
-   padding-bottom: 4em;
-   margin: 0;
-   border: 2px solid;
-   width:14.2857142857142857%;
-   font-size: 20px;
- }
-
- .day-name{
-   padding: 0;
-   text-align: center;
-   height:auto;
-   font-size: 150%;
-   font-style: bold;
- }
- a{
-   z-index: 4;
-   color:limegreen;
- }
- .day1{
-   background-image: url('./images/day1_1.jpg');
- }
-
- h2{
-   text-align: center;
- }
-
- img{
-   margin-bottom: 20px;
-   position: relative;
-   z-index: -1;
-   min-width: 65%;
-   max-width: 100%;
-   height:400px;
- }
-
- .responsive-img{
-   width: 100%;
- }

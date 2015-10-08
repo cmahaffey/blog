@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
+//= require materialize.min
 //= require backbone
 //= require_tree
 //= require pictures

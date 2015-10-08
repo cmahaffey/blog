@@ -1,10 +1,14 @@
 <header>
-  <img class="responsive-img" src="http://i650.photobucket.com/albums/uu224/tjmahaffey/day3_1_zps8vjsqf3v.jpg" />
+  <h2 class="header">"Everywhere is in walking distance if you have enough time."</h2>
+  <div class="imgs">
+    <img class="img" src="http://i650.photobucket.com/albums/uu224/tjmahaffey/day3_1_zps8vjsqf3v.jpg" />
+  </div>
+  <div class="links">●　<a class="internal" href="#september">September</a> 　● 　<a class="class"href="#october">October</a>　● </div>
 </header>
 <div class="container">
-  <table class="calendar">
+  <table class="calendar september">
     <thead>
-    <th colspan="7"><h3><center>September 2015</center></h3></th>
+    <th colspan="7"><h3><center><a name="september"></a>September 2015 </center></h3></th>
     </thead>
     <tr>
     <td class="day-name">Sun</td>
@@ -46,8 +50,50 @@
       <td/>
       <td/>
     </tr>
-
-
-
     </table>
+    <br>
+    <table class="calendar october">
+      <thead>
+      <th colspan="7"><h3><center>October 2015 <a name="october"></a></center></h3></th>
+      </thead>
+      <tr>
+      <td class="day-name">Sun</td>
+      <td class="day-name">Mon</td>
+      <td class="day-name">Tue</td>
+      <td class="day-name">Wed</td>
+      <td class="day-name">Thu</td>
+      <td class="day-name">Fri</td>
+      <td class="day-name">Sat</td>
+      </tr>
+      <tr>
+      <td ></td>
+      <td ></td>
+      <td ></td>
+      <td ></td>
+        <%while @date<=@days.length%>
+          <%@days.each do |day|%>
+            <%if @date%7==6%>
+              </tr>
+              <tr>
+                <td class="day"><a href="/<%=day.day_number%>"><%=day.day_number%></a></td>
+
+            <%else%>
+                <td class="day"><a href="/<%=day.day_number%>"><%=day.day_number%></a></td>
+            <%end%>
+            <%@date+=1%>
+          <%end%>
+        <%end%>
+        <%while @date<62%>
+          <%if @date%7==6%>
+            </tr>
+            <tr>
+              <td class="day"><%=@date-30%></td>
+              <%@date+=1%>
+          <%else%>
+              <td class="day"><%=@date-30%></td>
+              <%@date+=1%>
+          <%end%>
+        <%end%>
+      </tr>
+      </table>
 </div>
