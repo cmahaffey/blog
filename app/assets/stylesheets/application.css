@@ -24,6 +24,7 @@ body {
  color: #222;
  margin: 0;
  padding: 0;
+ box-sizing: border-box;
 }
 
 .header{
@@ -97,4 +98,49 @@ body {
    min-height: 100vh;
    width: 100%;
 
+ }
+
+ @media screen and (max-device-width: 420px){
+   h2{
+     position: absolute;
+     top:40vh;
+     color: rgb(205,205,205);
+     font-size: 60px;
+     text-shadow: 4px 4px 4px 4px black;
+   }
+   .container{
+     width: 100%
+   }
+   h3{
+     font-size: .25em;
+   }
+   .img{
+     min-height: 75vh;
+   }
+
+   .links{
+     font-size: 50px;
+     margin-top: -150px;
+     text-shadow: 4px 4px 4px 4px black;
+   }
+   .month{
+     margin-top: 10px;
+     font-size: 10em;
+   }
+   td,tr{
+     font-size: 2em;
+     vertical-align: top;
+     height: 10px;
+     padding-bottom: 0 !important;
+   }
+   a{
+     margin: 0;
+     padding:0;
+   }
+
+   table{
+     min-height: 5vh;
+     padding: 0;
+     height: 75vh;
+   }
  }
